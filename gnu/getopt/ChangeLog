@@ -1,3 +1,12 @@
+For release 1.9.9 (2002/01/16)
+
+Yasuoka Masahiko <yasuoka@yasuoka.net> provided Japanese langauge messages.
+
+Csom Gyula <Csom@interface.hu> provided Hungarian languag messages.
+
+Guillaume Rousse <rousse@ccr.jussieu.fr> supplied the ant build file
+and documentation.  
+
 For release 1.0.8 (2000/09/11)
 
 Ernst de Haan <ernst@jollem.com> provided Dutch language messages.

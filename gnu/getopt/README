@@ -36,8 +36,22 @@ such a simple package.
 There is sample code showing how to use getopt available in the
 GetoptDemo.java file.
 
+NEW: A support file for the "ant" build process was contributed.  Here are
+some brief things you can do with it.  Note that I have not ever used this
+so it is doubly AS IS.
+
+Get ant from jakarta project (see jakarta.apache.org/ant), and run it with
+one of these target (all is default target):
+ant prepare: create the needed directories
+ant classes: compile the java classes
+ant jar: create the jar archive
+ant javadoc: create the javadoc
+ant all: create jar and javadoc
+ant clean: clean everything
+
 Happy hacking,
 
 Aaron.
 arenn@urbanophile.com
 http://www.urbanophile.com/arenn/
+
