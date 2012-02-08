@@ -1,3 +1,9 @@
+For release 1.0.14 (2012/02/08)
+
+David Zhang (david290@qq.com) provided Chinese language messages.
+Daniel Thomas (drt24@srcf.ucam.org) contributed a patch to fix a static
+access warning message.
+
 For release 1.0.13 (2006/08/29)
 
 Krzysztof Szymanski (sirch.s@gmail.com) provided Polish language messages.
