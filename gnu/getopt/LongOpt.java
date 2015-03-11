@@ -99,8 +99,7 @@ protected int val;
 /**
   * Localized strings for error messages
   */
-private ResourceBundle _messages = ResourceBundle.getBundle(
-                            "gnu/getopt/MessagesBundle", Locale.getDefault());
+private Getopt.OptI18n _messages = new Getopt.OptI18n();
 
 /**************************************************************************/
 
