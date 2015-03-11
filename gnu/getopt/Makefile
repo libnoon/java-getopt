@@ -1,7 +1,7 @@
 # Makefile for Java port of GNU getopt
 
-all: 
+all:
 	javac LongOpt.java Getopt.java GetoptDemo.java
 
-docs: 
+docs:
 	javadoc -author -version -public Getopt.java LongOpt.java

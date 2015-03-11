@@ -34,7 +34,7 @@
 
   <!-- Build classes -->
   <target name="classes" depends="prepare">
-    <javac srcdir="${src}" destdir="${build.classes}" debug="off" 
+    <javac srcdir="${src}" destdir="${build.classes}" debug="off"
 optimize="on"/>
     <copy todir="${build.classes}">
       <fileset dir="${src}">
@@ -65,4 +65,3 @@ optimize="on"/>
   <target name="all" depends="jar,javadoc"/>
 
 </project>
-

@@ -17,12 +17,12 @@ main(String[] argv)
  int c;
  String arg;
  LongOpt[] longopts = new LongOpt[3];
- // 
+ //
  StringBuffer sb = new StringBuffer();
  longopts[0] = new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h');
- longopts[1] = new LongOpt("outputdir", LongOpt.REQUIRED_ARGUMENT, sb, 'o'); 
+ longopts[1] = new LongOpt("outputdir", LongOpt.REQUIRED_ARGUMENT, sb, 'o');
  longopts[2] = new LongOpt("maximum", LongOpt.OPTIONAL_ARGUMENT, null, 2);
- // 
+ //
  Getopt g = new Getopt("testprog", argv, "-:bc::d:hW;", longopts);
  g.setOpterr(false); // We'll do our own error handling
  //
@@ -48,7 +48,7 @@ main(String[] argv)
           System.out.println("I know this, but pretend I didn't");
           System.out.println("We picked option " +
                              longopts[g.getLongind()].getName() +
-                           " with value " + 
+                           " with value " +
                            ((arg != null) ? arg : "null"));
           break;
           //
@@ -59,7 +59,7 @@ main(String[] argv)
         case 'c':
         case 'd':
           arg = g.getOptarg();
-          System.out.println("You picked option '" + (char)c + 
+          System.out.println("You picked option '" + (char)c +
                              "' with argument " +
                              ((arg != null) ? arg : "null"));
           break;
@@ -79,7 +79,7 @@ main(String[] argv)
           break;
           //
         case '?':
-          System.out.println("The option '" + (char)g.getOptopt() + 
+          System.out.println("The option '" + (char)g.getOptopt() +
                            "' is not valid");
           break;
           //
@@ -93,5 +93,3 @@ main(String[] argv)
 }
 
 } // Class GetoptDemo
-
-
