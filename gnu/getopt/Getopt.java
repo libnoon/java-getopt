@@ -22,10 +22,11 @@
 
 package gnu.getopt;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
+import static org.openstreetmap.josm.tools.I18n.tr;
 
 import java.text.MessageFormat;
+import java.util.HashMap;
+import java.util.Map;
 
 /**************************************************************************/
 
@@ -540,8 +541,7 @@ protected String progname;
 /**
   * The localized strings are kept in a separate file
   */
-private ResourceBundle _messages = ResourceBundle.getBundle(
-                           "gnu/getopt/MessagesBundle", Locale.getDefault());
+private OptI18n _messages = new OptI18n();
 
 /**************************************************************************/
 
@@ -583,6 +583,33 @@ Getopt(String progname, String[] argv, String optstring,
 
 /**************************************************************************/
 
+static class OptI18n {
+    public  OptI18n() {
+        add("getopt.ambigious", tr("{0}: option ''{1}'' is ambiguous"));
+        add("getopt.arguments1", tr("{0}: option ''--{1}'' does not allow an argument"));
+        add("getopt.arguments2", tr("{0}: option ''{1}{2}'' does not allow an argument"));
+        add("getopt.requires", tr("{0}: option ''{1}'' requires an argument"));
+        add("getopt.unrecognized", tr("{0}: unrecognized option ''--{1}''"));
+        add("getopt.unrecognized2", tr("{0}: unrecognized option ''{1}{2}''"));
+        add("getopt.illegal", tr("{0}: illegal option -- {1}"));
+        add("getopt.invalid", tr("{0}: invalid option -- {1}"));
+        add("getopt.requires2", tr("{0}: option requires an argument -- {1}"));
+        add("getopt.invalidValue", tr("Invalid value {0} for parameter ''has_arg''"));
+    }
+
+    Map<String, String> trns = new HashMap<String, String>();
+
+    private void add(String key, String value) {
+        trns.put(key, value);
+    }
+
+    public String getString(String s) {
+        String val = trns.get(s);
+        if (val == null) throw new IllegalArgumentException();
+        return val.replace("'", "''");
+    }
+}
+
 /**
   * Construct a Getopt instance with given input data that is capable of
   * parsing long options and short options.  Contrary to what you might
@@ -619,8 +646,7 @@ Getopt(String progname, String[] argv, String optstring,
   else
     {
       posixly_correct = true;
-      _messages = ResourceBundle.getBundle("gnu/getopt/MessagesBundle",
-                                                   Locale.US);
+      _messages = new OptI18n();
     }
 
   // Determine how to handle the ordering of options and non-options
