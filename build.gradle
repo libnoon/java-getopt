@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+version = '1.1.0'
+sourceCompatibility = '1.7'
+
+sourceSets {
+  main {
+    java {
+      exclude 'GetoptDemo.java'
+    }
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.4'
+}
